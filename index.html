@@ -28,6 +28,9 @@
             text-shadow: 0 0 3px #ff0099, 0 0 5px #ff0099, 0 0 8px rgba(255, 0, 153, 0.8);
         }
         .agent-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             width: 100%;
             max-width: 800px;
         }
@@ -35,7 +38,6 @@
             background-color: #1c1c28;
             border: 1px solid #333;
             border-radius: 12px;
-            margin-bottom: 15px;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -48,12 +50,6 @@
             background-color: #292945;
             transform: scale(1.03);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-        }
-        .agent-card:nth-child(odd) .agent-content {
-            flex-direction: row;
-        }
-        .agent-card:nth-child(even) .agent-content {
-            flex-direction: row-reverse;
         }
         .agent-content {
             display: flex;
@@ -109,6 +105,13 @@
         .access-button:hover {
             box-shadow: 0 0 15px #00ffff, 0 0 20px #00ffff;
             transform: scale(1.05);
+        }
+
+        /* Responsivo para telas menores */
+        @media (max-width: 600px) {
+            .agent-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
