@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes de IA</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            background: radial-gradient(circle at center, rgba(255, 0, 153, 0.3), transparent 70%), 
+                        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.2), transparent 70%), 
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 0, 0.15), transparent 70%), 
+                        #0e0b16;
+            background-blend-mode: screen;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff0099;
+            text-shadow: 0 0 3px #ff0099, 0 0 5px #ff0099, 0 0 8px rgba(255, 0, 153, 0.8);
+        }
+        .agent-container {
+            width: 100%;
+            max-width: 800px;
+        }
+        .agent-card {
+            background-color: #1c1c28;
+            border: 1px solid #333;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
+        }
+        .agent-card:hover {
+            background-color: #292945;
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .agent-card:nth-child(odd) .agent-content {
+            flex-direction: row;
+        }
+        .agent-card:nth-child(even) .agent-content {
+            flex-direction: row-reverse;
+        }
+        .agent-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .agent-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #333;
+            margin: 0 20px;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+        }
+        .agent-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .agent-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            max-width: 550px;
+        }
+        .agent-name {
+            font-size: 1.3em;
+            color: #ff0099;
+            margin-bottom: 5px;
+            text-shadow: 0 0 2px #ff0099, 0 0 4px rgba(255, 0, 153, 0.7);
+        }
+        .agent-description {
+            font-size: 1em;
+            color: #a6a6a6;
+            margin: 0;
+        }
+        .access-button {
+            background-color: #00ffff;
+            color: #0e0b16;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin: 0 20px;
+            transition: box-shadow 0.3s, transform 0.3s;
+            text-shadow: 0 0 3px #00ffff;
+            box-shadow: 0 0 8px #00ffff;
+        }
+        .access-button:hover {
+            box-shadow: 0 0 15px #00ffff, 0 0 20px #00ffff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Agentes de IA</h1>
+
+    <div class="agent-container">
+        <!-- Agente 1 (Logo à Esquerda) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <div class="agent-logo">
+                    <img src="https://media.licdn.com/dms/image/v2/C5612AQFreOg9-GDOKQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1555406428588?e=2147483647&v=beta&t=4ZjZfI_UcuVQT29hl4ognVcERJSZgSv5r5byRZxy3yI" alt="Logo Jornal 2.0">
+                </div>
+                <div class="agent-info">
+                    <div class="agent-name">Jornal 2.0</div>
+                    <div class="agent-description">Expande e reescreve matérias jornalísticas com foco e fidelidade.</div>
+                </div>
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-oWz0Ub4w3-jornal-2-0', '_blank')">Acessar</button>
+            </div>
+        </div>
+
+        <!-- Agente 2 (Logo à Direita) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-lxvetCWZY-reporter-investigativo', '_blank')">Acessar</button>
+                <div class="agent-info">
+                    <div class="agent-name">Repórter Investigativo</div>
+                    <div class="agent-description">Ferramenta de IA para investigação e criação de reportagens aprofundadas.</div>
+                </div>
+                <div class="agent-logo">
+                    <img src="https://yt3.googleusercontent.com/8oVAa1zinQ6Yz2NmXVcgHrUHs1NQ8E8sk1k-eemvQhKgbh7GgICaE8vKy3RO2_JYrHNgzpqfRg=s900-c-k-c0x00ffffff-no-rj" alt="Logo Repórter Investigativo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Agente 3 (Logo à Esquerda) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <div class="agent-logo">
+                    <img src="https://meuredator.com.br/wp-content/uploads/2019/04/redator-freelancer-trabalhar-online.jpg" alt="Logo Redator de Artigos">
+                </div>
+                <div class="agent-info">
+                    <div class="agent-name">Redator de Artigos</div>
+                    <div class="agent-description">Escreve artigos tecnológicos longos e detalhados.</div>
+                </div>
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-W0F5KF4qz-redator-de-artigosGENT_3', '_blank')">Acessar</button>
+            </div>
+        </div>
+
+        <!-- Agente 4 (Logo à Direita) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-ijNpfOkaD-redator-tech', '_blank')">Acessar</button>
+                <div class="agent-info">
+                    <div class="agent-name">Redator Tech</div>
+                    <div class="agent-description">IA voltada para a produção de conteúdo sobre tecnologia e inovações.</div>
+                </div>
+                <div class="agent-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMOyGTXgp89VVJIxOc3i-mzXpU8JWNDzvmzg&s" alt="Logo Redator Tech">
+                </div>
+            </div>
+        </div>
+
+        <!-- Agente 5 (Logo à Esquerda) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <div class="agent-logo">
+                    <img src="https://img.freepik.com/premium-vector/cute-robot-sitting-with-text-cartoon-vector-illustration-science-technology-concept-isolated_603291-2279.jpg" alt="Logo TechBot">
+                </div>
+                <div class="agent-info">
+                    <div class="agent-name">TechBot</div>
+                    <div class="agent-description">Reescreve conteúdo técnico para boletins de notícias semanais com clareza e concisão.</div>
+                </div>
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-ZVA0aZRUC-techbot', '_blank')">Acessar</button>
+            </div>
+        </div>
+
+        <!-- Agente 6 (Logo à Direita) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-5lEAzMruL-news-tech_6', '_blank')">Acessar</button>
+                <div class="agent-info">
+                    <div class="agent-name">News Tech</div>
+                    <div class="agent-description">Apresentador de notícias tecnológicas.</div>
+                </div>
+                <div class="agent-logo">
+                    <img src="https://contentstatic.techgig.com/photo/88607432/a-to-z-of-technology-top-tech-news-of-2021-at-a-glance.jpg?32786" alt="Logo News Tech">
+                </div>
+            </div>
+        </div>
+
+        <!-- Agente 7 (Logo à Esquerda) -->
+        <div class="agent-card">
+            <div class="agent-content">
+                <div class="agent-logo">
+                    <img src="https://t2.tudocdn.net/71528?w=1920" alt="Logo Especialista Android">
+                </div>
+                <div class="agent-info">
+                    <div class="agent-name">Especialista Android</div>
+                    <div class="agent-description">Especialista em Android, ajuda com desenvolvimento, otimização e dúvidas gerais.</div>
+                </div>
+                <button class="access-button" onclick="event.stopPropagation(); window.open('https://chatgpt.com/g/g-54jASsOv6-especialista-android', '_blank')">Acessar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
